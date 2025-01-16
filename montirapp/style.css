@@ -1,0 +1,178 @@
+/* Body umum untuk halaman login dan registrasi */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1c1c1c;
+    /* Latar belakang gelap */
+    color: #f4f4f4;
+    /* Teks terang agar kontras */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container untuk form login dan registrasi */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    background-color: #222;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    text-align: center;
+}
+
+/* Judul Login dan Registrasi */
+.login-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #e74c3c;
+    /* Merah khas otomotif */
+    margin-bottom: 20px;
+}
+
+/* Form input */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 2px solid #f39c12;
+    /* Garis kuning otomotif */
+    border-radius: 8px;
+    background-color: #333;
+    color: #f4f4f4;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #e74c3c;
+    /* Warna merah saat fokus */
+    background-color: #444;
+    outline: none;
+}
+
+/* Tombol login dan registrasi */
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #e74c3c;
+    /* Merah terang khas otomotif */
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    border: none;
+    margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+    background-color: #c0392b;
+    /* Merah gelap saat hover */
+}
+
+/* Notifikasi Registrasi Berhasil */
+.notification-success {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #28a745;
+    /* Hijau terang */
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+.notification-success a {
+    color: white;
+    text-decoration: underline;
+}
+
+.notification-success a:hover {
+    color: #f39c12;
+}
+
+
+/* Pesan kesalahan */
+.error-message {
+    color: #c0392b;
+    /* Merah untuk pesan kesalahan */
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Link registrasi */
+.register-link {
+    color: #f39c12;
+    font-size: 16px;
+    margin-top: 15px;
+    text-decoration: none;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+    color: #e74c3c;
+}
+
+/* Notifikasi Registrasi Berhasil */
+.notification-success {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #d87402;
+    /* Warna oranye terang */
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+.notification-success button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.notification-success button:hover {
+    color: #f39c12;
+}
+
+/* Responsif untuk tampilan mobile */
+@media (max-width: 500px) {
+    .login-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .login-title {
+        font-size: 24px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        font-size: 14px;
+    }
+
+    button[type="submit"] {
+        font-size: 16px;
+    }
+}
