@@ -3,12 +3,16 @@ require 'config.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
-    $password = $_POST['password']; // Simpan password apa adanya
+    $password = $_POST['password'];
+    $email = $_POST['email'];
+    $whatsapp = $_POST['whatsapp'];
 
-    $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
-    $stmt->bind_param("ss", $username, $password);
+    $stmt = $conn->prepare("INSERT INTO users (username, password, email, whatsapp) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssss", $username, $password, $email, $whatsapp);
 
     if ($stmt->execute()) {
+        header("Location: login.php?status=success");
+        exit();
     } else {
         echo "<p class='error'>Error: " . $stmt->error . "</p>";
     }
@@ -28,21 +32,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
-    <div class="container">
-        <h1 class="header-title">Montir Express</h1>
-        <h2>Registrasi</h2>
-        <form method="POST">
-            <label for="username">Username:</label>
-            <input type="text" name="username" id="username" required>
+    <!-- Form Registrasi -->
+    <div class="login-container">
+        <h2 class="login-title">Registrasi - MONTIR</h2>
 
-            <label for="password">Password:</label>
-            <input type="password" name="password" id="password" required>
+        <form action="register.php" method="POST">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="tel" name="whatsapp" placeholder="Nomor WhatsApp" required>
 
             <button type="submit">Daftar</button>
         </form>
-        <p>Sudah punya akun? <a href="login.php">Login di sini</a></p>
-    </div>
 
+        <a href="login.php" class="register-link">Sudah punya akun? Login di sini</a>
+    </div>
 </body>
 
 </html>

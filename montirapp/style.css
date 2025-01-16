@@ -35,8 +35,10 @@ body {
 
 /* Form input */
 input[type="text"],
-input[type="password"] {
-    width: 100%;
+input[type="password"],
+input[type="email"],
+input[type="tel"] {
+    width: 85%;
     padding: 12px 15px;
     margin: 10px 0;
     border: 2px solid #f39c12;
@@ -49,7 +51,9 @@ input[type="password"] {
 }
 
 input[type="text"]:focus,
-input[type="password"]:focus {
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus {
     border-color: #e74c3c;
     /* Warna merah saat fokus */
     background-color: #444;
@@ -76,33 +80,6 @@ button[type="submit"]:hover {
     background-color: #c0392b;
     /* Merah gelap saat hover */
 }
-
-/* Notifikasi Registrasi Berhasil */
-.notification-success {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #28a745;
-    /* Hijau terang */
-    color: white;
-    text-align: center;
-    padding: 15px;
-    font-size: 18px;
-    font-weight: bold;
-    z-index: 1000;
-}
-
-.notification-success a {
-    color: white;
-    text-decoration: underline;
-}
-
-.notification-success a:hover {
-    color: #f39c12;
-}
-
 
 /* Pesan kesalahan */
 .error-message {
@@ -133,8 +110,8 @@ button[type="submit"]:hover {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #d87402;
-    /* Warna oranye terang */
+    background-color: #28a745;
+    /* Hijau terang */
     color: white;
     text-align: center;
     padding: 15px;
@@ -143,16 +120,12 @@ button[type="submit"]:hover {
     z-index: 1000;
 }
 
-.notification-success button {
-    background-color: transparent;
+.notification-success a {
     color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    margin-left: 15px;
+    text-decoration: underline;
 }
 
-.notification-success button:hover {
+.notification-success a:hover {
     color: #f39c12;
 }
 
@@ -168,7 +141,9 @@ button[type="submit"]:hover {
     }
 
     input[type="text"],
-    input[type="password"] {
+    input[type="password"],
+    input[type="email"],
+    input[type="tel"] {
         font-size: 14px;
     }
 
